@@ -14,6 +14,10 @@ public class Person {
         age = a;
     }
 
+    public static int getNumHearts() {
+        return numHearts;
+    }
+
     public String getName() {
         return name;
     }
@@ -33,10 +37,31 @@ public class Person {
     }
 
     public String toString() {
-        return name + " is " + age + " years old.";
+        return hearts() + name + " is a " + age + " year old " + species;
+    }
+
+    public static String hearts() {
+        return "All " + species + " have " + numHearts + " heart. ";
+    }
+
+    public static void howManyHearts(int h) {
+        if (h == numHearts) {
+            System.out.print("Correct! ");
+        } else {
+            System.out.print("Incorrect! ");
+        }
+        System.out.println(hearts());
     }
 
     public void copyName(Person p) {
         name = p.name;
+    }
+
+    public int getYearBorn() {
+        return 2023 - age;
+    }
+    
+    public void sayYearBorn() {
+        System.out.println("I was born in " + getYearBorn());
     }
 }
